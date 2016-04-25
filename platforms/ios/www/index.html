@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: griffis.edumedia.ca; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>MeetCute Mablib</title>
+    </head>
+    <body>
+        <div class="header-bar">
+            <h1 id="meetMe">Meet Me</h1>
+        </div>
+        <section data-role="page" id="profile">
+            <!-- display the wizard or the results of the profile wizard plus an edit FAB -->
+            <h1 id="profileh1">Profile</h1>
+            <ul id="people"></ul>
+            <p class="profile" id="name">Full Name <span></span></p>
+            <p class="profile" id="email">Email <span></span></p>
+            <p class="profile" id="gender">Gender pronoun <span></span></p>
+            <p class="profile" id="beverage">Type of Beverage <span></span></p>
+            <p class="profile" id="food">Type of Food <span></span></p>
+            <p class="profile" id="clothing">Type of Clothing <span></span></p>
+            <p class="profile" id="time">Time of Day <span></span></p>
+            <p class="profile" id="social">Social Media <span></span></p>
+            <p class="profile" id="transport">Mode of Transportation <span></span></p>
+            <p class="profile" id="number">Favourite Number <span></span></p>
+            <p class="profile" id="facial">Facial Expression <span></span></p>
+            <div class="fab" id="btnEdit" title="Edit"><i class="fa fa-pencil-square-o fa-3x"></i></div>
+        </section>
+        
+        <section data-role="page" id="scan">
+            <!-- display the qr code and a button to scan another code -->
+            <h1 id="scan">Your QR Code</h1>
+            <div id="qr"></div>
+            <button class="btn" id="btnScan">Scan Code</button>
+        </section>
+        
+        <section data-role="page" id="contacts">
+            <!-- list of people who have been met using this phone -->
+    
+            <ul class="list-view" id="list">
+                <!-- <li class="list-item contact" data-href="madlib" data-id="5">Bob Smith <i class="fa fa-chevron-right"></i></li> -->
+            </ul>
+        </section>
+        
+        <section data-role="page" id="madlib">
+            <!-- madlib of how the device owner met the selected person from the list.  Also displayed after scanning a user            -->
+            <p id="story"><span data-ref="user-a"></span> and <span data-ref="user-b"></span> met on <span data-ref="date"></span>. As fate would have it they both were drinking <span data-ref="beverage-1"></span> when they collided. The <span data-ref="transport"></span> had slowed suddenly causing <span data-ref="user-rand-1-1"></span> to spill <span data-ref="gender-1"></span> <span data-ref="beverage-2"></span> on <span data-ref="user-rand-2-1"></span>'s <span data-ref="clothing"></span>. <span data-ref="user-rand-2-2"></span>'s eyes narrowed and <span data-ref="user-rand-1-2"]></span> began to <span data-ref="facial"></span>. Both of them began frantically posting to <span data-ref="social"></span>. A truer friendship had never begun. They spent the next <span data-ref="time"></span> eating $<span data-ref="number"></span> <span data-ref="food"></span>.</p>
+            
+        </section>
+        
+        <nav id="nav">
+            <ul id="menu">
+                <li id="href1" class="active-tab current"><a href="#profile" data-href="profile"><i class="fa fa-user fa-1x"></i>Profile</a></li>
+                <li id="href2"><a href="#scan" data-href="scan"><i class="fa fa-barcode fa-1x"></i>Scan</a></li>
+                <li id="href3"><a href="#contacts" data-href="contacts"><i class="fa fa-users fa-1x"></i>Contacts</a></li>
+            </ul>
+        </nav>
+        
+        
+        <div class="overlay"></div>
+        
+        
+        <section class="modal">
+           
+            <div class="modal-step step-0">
+              <h2>Step 1 of 5</h2>
+              <div class="content">
+                <!-- content for the step -->
+                <p>
+                    <label for="txtName">Full Name</label>
+                    <input type="text" id="txtName" placeholder="Full Name" />
+                </p>
+                <p>
+                    <label for="txtEmail">Email</label>
+                    <input type="email" id="txtEmail" placeholder="Email" />
+                </p>
+                <p>
+                    <label for="txtSex">Gender</label>
+                    <select id="txtSex">
+                       <option value="his">Male</option>
+                       <option value="her">Female</option>
+                    </select>
+                </p>
+              </div>
+              <a id="exitBtn" class="exitBtn"><i class="fa fa-times-circle-o fa-3x" aria-hidden="true"></i></a>
+              <button class="btn next"><i class="fa fa-arrow-circle-o-right fa-4x" aria-hidden="true"></i></button>
+            </div>
+            <div class="modal-step step-1">
+              <h2>Step 2 of 5</h2>
+              <div class="content">
+                <!-- content for the step -->
+                <p>
+                    <label for="txtBeverage">Pick a Beverage</label>
+                    <select id="txtBeverage">
+                        <option value="milk">Milk</option>
+                        <option value="coke">Coke</option>
+                        <option value="pepsi">Pepsi</option>
+                        <option value="water">Water</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="txtFood">Pick a Food</label>
+                    <select id="txtFood">
+                        <option value="pizza">Pizza</option>
+                        <option value="poutine">Poutine</option>
+                        <option value="sushi">Sushi</option>
+                        <option value="Salad">Salad</option>
+                    </select>
+                </p>
+              </div>
+              <a id="exitBtn2" class="exitBtn"><i class="fa fa-times-circle-o fa-3x" aria-hidden="true"></i></a>
+              <button class="btn next"><i class="fa fa-arrow-circle-o-right fa-4x" aria-hidden="true"></i></button>
+            </div>
+            <div class="modal-step step-2 active-step">
+              <h2>Step 3 of 5</h3>
+              <div class="content">
+                <!-- content for the step -->
+                <p>
+                    <label for="txtClothing">Type of Clothing</label>
+                    <select id="txtClothing">
+                       <option value="blue shirt">Blue shirt</option>
+                       <option value="red shirt">Red shirt</option>
+                        <option value="shorts">Shorts</option>
+                        <option value="khakis">Khakis</option>
+                        <option value="sweater vest">Sweater Vest</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="txtTimeOfDay">Time of Day</label>
+                    <select id="txtTimeOfDay">
+                        <option value="sunrise">Sunrise</option>
+                        <option value="morning">Morning</option>
+                        <option value="afternoon">Afternoon</option>
+                        <option value="sunset">Sunset</option>
+                        <option value="evening">Evening</option>
+                    </select>
+                </p>
+              </div>
+            <a id="exitBtn3" class="exitBtn"><i class="fa fa-times-circle-o fa-3x" aria-hidden="true"></i></a>
+              <button class="btn next"><i class="fa fa-arrow-circle-o-right fa-4x" aria-hidden="true"></i></button>
+            </div>
+            <div class="modal-step step-3">
+              <h2>Step 4 of 5</h2>
+              <div class="content">
+                <!-- content for the step -->
+                <p>
+                    <label for="txtSocial">Social Media</label>
+                    <select id="txtSocial">
+                        <option value="facebook">Facebook</option>
+                        <option value="twitter">Twitter</option>
+                        <option value="instagram">Instagram</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="txtTransport">Mode of Transportation</label>
+                    <select id="txtTransport">
+                        <option value="train">Train</option>
+                        <option value="bus">Bus</option>
+                        <option value="plane">Plane</option>
+                    </select>
+                </p>
+              </div>
+              <a id="exitBtn4" class="exitBtn"><i class="fa fa-times-circle-o fa-3x" aria-hidden="true"></i></a>
+              <button class="btn next"><i class="fa fa-arrow-circle-o-right fa-4x" aria-hidden="true"></i></button>
+            </div>
+            <div class="modal-step step-4">
+              <h2>Step 5 of 5</h2>
+              <div class="content">
+                <!-- content for the step -->
+                <p>
+                    <label for="txtNumber">Favourite Number</label>
+                    <input type="number" id="txtNumber" value="3" max="100" min="1" /></p>
+                <p>
+                    <label for="txtFacial">Facial Expression</label>
+                    <select id="txtFacial">
+                        <option value="smirk">Smirk</option>
+                        <option value="sneer">Sneer</option>
+                    </select>
+                </p>
+              </div>
+              <a id="exitBtn5" class="exitBtn"><i class="fa fa-times-circle-o fa-3x" aria-hidden="true"></i></a>
+              <button class="btn next"><i class="fa fa-check-circle-o fa-4x" aria-hidden="true"></i></button>
+            </div>
+           
+        </section>
+        <!-- link to navigate to the madlib story. doesn't appear on the page but used by JS -->
+        <a name="madlibLink" id="madlibLink" data-href="madlib"></a>
+        
+        <script src="cordova.js"></script>
+        <script src="js/qrcode.min.js"></script>
+        <script src="js/hammer.min.js"></script>
+        
+        <script src="js/app.js"></script>
+    </body>
+</html>
